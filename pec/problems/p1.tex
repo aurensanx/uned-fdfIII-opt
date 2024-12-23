@@ -2,32 +2,37 @@
 
 \vspace{20px}
 
-Como punto de partida, se recogen los datos de desplazamiento espectral $z$, distancia $d$ (Mpc) y Magnitud aparente visual $m_v$ del software
+Como punto de partida, se recogen los datos de desplazamiento espectral $z$, distancia $r$ (Mpc) y Magnitud aparente visual $m_v$ del software
 Stellarium.
 
-La Magnitud absoluta visual $M_v$ se calcula a partir de la Magnitud aparente visual a través de la relación:
+La Magnitud absoluta visual $M_v$ se calcula a partir de la Magnitud aparente visual gracias a la relación:
 
 \begin{equation*}
-    m - M = 5 \log\frac{r[\text{pc}]}{10} = 5 \log r[\text{pc}] - 5
+    m - M = 5 \log\frac{r[\text{pc}]}{10} = 5 \log r[\text{pc}] - 5,
 \end{equation*}
 
-, que equivale a desplazar la estrella a una distancia estándar de $r$ = 10 pc y medir allí su brillo.
+que equivale a desplazar la galaxia a una distancia estándar de $r$ = 10 pc y medir allí su brillo.
 
 La velocidad de recesión $v$ y la constante de Hubble $H_0$ se obtienen de la relación:
 
 \begin{equation*}
-    v = c\,z = H_0\,r
+    v = c\,z = H_0\,r,
     \end{equation*}
 
-, que nos indica que el desplazamiento al rojo $z$ se incrementa con la distancia $r$ de la galaxia, y que existe una relación lineal entre su
+que nos indica que el desplazamiento espectral $z$ se incrementa con la distancia $r$ de la galaxia, y que existe una relación lineal entre su
 distancia y velocidad de recesión.\\
+
+Para hacer los cálculos de las magnitudes mencionadas, se obvian los márgenes de error que nos proporciona Stellarium, aunque sí que se que han
+recogido en la tabla pedida.
+
+Los valores numéricos se muestran con delimitadores en notación inglesa.
 
 \begin{table}[H]
     \scriptsize
     \begin{tabular}{|p{64px}|p{80px}|p{57px}|p{54px}|p{54px}|p{54px}|p{60px}|}
         \hline
-        \textbf{Identificador de la galaxia} & \textbf{Desplazamiento espectral $z$} & \textbf{Distancia (Mpc)} & \textbf{Velocidad de recesión (km/s)}
-        & \textbf{Magnitud aparente visual} & \textbf{Magnitud absoluta visual} & \textbf{Constante de Hubble (km/s Mpc)} \\
+        \textbf{Identificador de la galaxia} & \textbf{Desplazamiento espectral $z$} & \textbf{Distancia $r$ (Mpc)} & \textbf{Velocidad de recesión $v$ (km/s)}
+        & \textbf{Magnitud aparente visual $m_v$} & \textbf{Magnitud absoluta visual $M_v$} & \textbf{Constante de Hubble $H_0$ (km/s Mpc)} \\
         \hline
         \csvreader[late after line=\\]{files/data.csv}{}% use head of csv as column names
         {\csvcoli&\csvcolii&\csvcoliii&\csvcoliv&\csvcolv&\csvcolvi&\csvcolvii}% specify your columns here
